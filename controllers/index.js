@@ -6,5 +6,3 @@ router.use("/api/users",userRoutes);
 
 const projectRoutes = require("./projectsController");
 router.use("/api/projects",projectRoutes);
-
-module.exports = router
