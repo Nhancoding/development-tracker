@@ -10,6 +10,13 @@ subcontractor.init({
         validate:{
             len:[1]
         }   
+    },
+    name:{
+        type: DataTypes.STRING,
+        allowNull:false,
+        validate:{
+            len:[1]
+        }
     }
 },{
     sequelize,

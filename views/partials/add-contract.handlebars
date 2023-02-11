@@ -1,0 +1,21 @@
+<div class="contract-form">
+    <h2>Add new contract</h2>
+    <form id="submitform">
+        <label for="cname">Contract name:</label>
+        <input type="text" name="contractname" id="cname" placeholder="enter contract name">
+
+        <label for="cdescription">Description:</label>
+        <input type="text" name="contractdescription" id="cdescription" placeholder="enter description">
+
+        <label for="subcontracts">Subcontracts needed:</label>
+        <div class="checkbox">
+            <labe><input type="checkbox" name="subcontractneeded" value="demolition">Demolition</label>
+            <labe><input type="checkbox" name="subcontractneeded" value="concrete">Concrete</label>
+            <labe><input type="checkbox" name="subcontractneeded" value="framing">Framing</label>
+            <labe><input type="checkbox" name="subcontractneeded" value="design">Designing</label>
+            <labe><input type="checkbox" name="subcontractneeded" value="staging">Staging</label>
+        </div>
+       <button class="submit-btn" id="submit"></button>
+    </form>
+</div>
+<script src="/js/add-contract.js"></script>
