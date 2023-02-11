@@ -10,9 +10,30 @@ subcontractor.init({
         validate:{
             len:[1]
         }   
+    },
+    id: {
+        type: DataTypes.INTEGER,
+        allowNull:false,
+        autoIncrement:true,
+        primaryKey:true
+    },
+    name: {
+        type: DataTypes.STRING,
+        allowNull:false,
+        validate:{
+            len:[1]
+        }
+    }, 
+    contract_id: {
+        type: DataTypes.INTEGER,
+        references:{
+            model:"contracts",
+            key:"id"
+        }
     }
 },{
     sequelize,
+    modelName:"subcontractor"
 });
 
 module.exports=subcontractor
