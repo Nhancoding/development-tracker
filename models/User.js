@@ -31,7 +31,8 @@ User.init({
             userObj.password = bcrypt.hashSync(userObj.password,4);
             return userObj;
         }
-    }
+    },
+    modelName:"User"
 });
 
 module.exports=User

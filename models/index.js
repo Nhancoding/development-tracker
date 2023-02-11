@@ -5,18 +5,31 @@ const subcontractor = require("./subcontractor")
 
 
 projects.belongsTo(User,{
-    onDelete:"CASCADE"
+    onDelete:"CASCADE",
+    foreignKey:"UserId"
 });
-User.hasMany(projects);
+User.hasMany(projects, {
+    onDelete:"CASCADE",
+    foreignKey:"UserId"
+}
+    );
+
 
 contracts.belongsTo(projects,{
     onDelete:"CASCADE"
-})
-projects.hasMany(contracts)
+    // foreignKey:"project_id" 
+});
+projects.hasMany(contracts,{
+    onDelete:"CASCADE"
+    // foreignKey:"project_id" 
+});
 
 subcontractor.belongsTo(contracts,{
     onDelete:"CASCADE"
-})
+    // foreignKey:"contract_id"
+});
+
+
 
 
 module.exports = {

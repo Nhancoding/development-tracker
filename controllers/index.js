@@ -6,3 +6,10 @@ router.use("/api/users",userRoutes);
 
 const projectRoutes = require("./projectsController");
 router.use("/api/projects",projectRoutes);
+
+
+const contractRoutes = require("./contractsController");
+router.use("/api/contracts",contractRoutes);
+
+
+module.exports = router;
