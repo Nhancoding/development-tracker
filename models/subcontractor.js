@@ -11,12 +11,12 @@ subcontractor.init({
             len:[1]
         }   
     },
-    id: {
-        type: DataTypes.INTEGER,
-        allowNull:false,
-        autoIncrement:true,
-        primaryKey:true
-    },
+    // id: {
+    //     type: DataTypes.INTEGER,
+    //     allowNull:false,
+    //     autoIncrement:true,
+    //     primaryKey:true
+    // },
     name: {
         type: DataTypes.STRING,
         allowNull:false,

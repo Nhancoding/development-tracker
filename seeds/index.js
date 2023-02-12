@@ -1,7 +1,7 @@
 const sequelize = require("../config/connection");
 const { User, subcontractor } = require("../models");
 
-const subcontractorSeeds = require("./subcontractorData.json")
+// const subcontractorSeeds = require("./subcontractorData.json")
 const seed = async ()=>{
     await sequelize.sync({force:true});
     const users = await User.bulkCreate([
@@ -28,7 +28,7 @@ const seed = async ()=>{
     ],{
         individualHooks:true
     })
-    const subcontracts = await subcontractor.bulkCreate(subcontractorSeeds);
+    // const subcontracts = await subcontractor.bulkCreate(subcontractorSeeds);
 }
 
 seed();

@@ -19,25 +19,25 @@ contracts.init({
         }
     },
     jobdescription: {
-         type: DataTypes.STRING,
+         type: DataTypes.TEXT,
          allowNull:false,
          validate:{
             len:[1]
         }   
-    },
-    id: {
-        type: DataTypes.INTEGER,
-        allowNull:false,
-        autoIncrement:true,
-        primaryKey:true
-    },
-    project_id: {
-        type: DataTypes.INTEGER,
-        references:{
-            model:"projects",
-            key:"id"
-        }
     }
+    // id: {
+    //     type: DataTypes.INTEGER,
+    //     allowNull:false,
+    //     autoIncrement:true,
+    //     primaryKey:true
+    // },
+    // project_id: {
+    //     type: DataTypes.INTEGER,
+    //     references:{
+    //         model:"projects",
+    //         key:"id"
+    //     }
+    // }
 },{
     sequelize,
     modelName:"contracts"
