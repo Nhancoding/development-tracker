@@ -4,6 +4,7 @@ const sequelize = require('../config/connection');
 class projects extends Model {}
 
 projects.init({
+    
     cost:{
         type: DataTypes.INTEGER,
         allowNull:false,
@@ -19,10 +20,26 @@ projects.init({
         }   
     },
     status:{
-        type:DataTypes.BOOLEAN
+        type:DataTypes.BOOLEAN,
+        allowNull:false,
+        validate:{
+            len:[1]
+    }},
+    UserId:{
+        type: DataTypes.INTEGER,
+        allowNull:false,
+        validate:{
+            len:[1]
+        }   
+    },id: {
+        type: DataTypes.INTEGER,
+        allowNull:false,
+        autoIncrement:true,
+        primaryKey:true
     }
 },{
     sequelize,
+    modelName:"projects"
 });
 
 module.exports=projects

@@ -25,12 +25,22 @@ contracts.init({
             len:[1]
         }   
     },
-    contractcost: {
-        type: DataTypes.DECIMAL,
-        allowNull:false
+    id: {
+        type: DataTypes.INTEGER,
+        allowNull:false,
+        autoIncrement:true,
+        primaryKey:true
+    },
+    project_id: {
+        type: DataTypes.INTEGER,
+        references:{
+            model:"projects",
+            key:"id"
+        }
     }
 },{
     sequelize,
+    modelName:"contracts"
 });
 
 module.exports=contracts
