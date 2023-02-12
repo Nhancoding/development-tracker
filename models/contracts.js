@@ -11,12 +11,23 @@ contracts.init({
     //         len:[1]
     //     }   
     // },
+    name:{
+        type: DataTypes.STRING,
+        allowNull:false,
+        validate:{
+            len:[1]
+        }
+    },
     jobdescription: {
          type: DataTypes.STRING,
          allowNull:false,
          validate:{
             len:[1]
         }   
+    },
+    contractcost: {
+        type: DataTypes.DECIMAL,
+        allowNull:false
     }
 },{
     sequelize,
