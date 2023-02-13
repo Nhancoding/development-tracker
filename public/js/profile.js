@@ -13,7 +13,7 @@ document.querySelector("#edit-profile").addEventListener("submit",e=>{
         if(res.ok){
            location.reload()
         } else {
-            alert("trumpet sound")
+            alert("error")
         }
     })
 })
