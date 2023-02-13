@@ -1,10 +1,6 @@
 document.querySelector("#signupForm").addEventListener("submit",e=>{
     e.preventDefault();
     const signupObj = {
-csm-profile-partials
-        name:document.querySelector("#signupname").value,
-
- dev
         email:document.querySelector("#signupEmail").value,
         password:document.querySelector("#signupPassword").value
     }
