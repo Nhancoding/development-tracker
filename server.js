@@ -6,7 +6,7 @@ const sequelize = require('./config/connection')
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const { User,projects,contracts,subcontractor} = require("./models")
+const hbs = exphbs.create({ helpers });
 
 //codes below allow us to interpret data
 app.use(express.urlencoded({ extended: true }));
