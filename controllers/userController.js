@@ -68,7 +68,7 @@ router.delete("/:id",(req,res)=>{
     })
 });
 
-module.exports = router;
+
 // create project protect
 router.post("/", async (req, res) => {
     try {
@@ -108,3 +108,5 @@ router.post("/", async (req, res) => {
       });
     }
   });
+
+  module.exports = router;
