@@ -19,25 +19,14 @@ projects.init({
             len:[1]
         }   
     },
-    status:{
-        type:DataTypes.BOOLEAN,
+    description: {
+        type: DataTypes.TEXT,
         allowNull:false,
         validate:{
-            len:[1]
-    }}
-    // UserId:{
-    //     type: DataTypes.INTEGER,
-    //     allowNull:false,
-    //     validate:{
-    //         len:[1]
-    //     }   
-    // }
-    // ,id: {
-    //     type: DataTypes.INTEGER,
-    //     allowNull:false,
-    //     autoIncrement:true,
-    //     primaryKey:true
-    // }
+           len:[1]
+       } 
+    }
+    
 },{
     sequelize,
     modelName:"projects"

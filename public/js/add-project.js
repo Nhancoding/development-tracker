@@ -31,10 +31,10 @@ document.querySelector('#addContract').addEventListener('click', e=>{
         description:document.querySelector("#cdescription").value,
         cost:document.querySelector("#ccost").value,
     }
-    console.log(contractObj)
+    console.log(contractData)
     fetch("/api/contracts",{
         method:"POST",
-        body:JSON.stringify(contractObj),
+        body:JSON.stringify(contractData),
         headers:{
             "Content-Type":"application/json"
         }

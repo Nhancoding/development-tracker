@@ -29,6 +29,7 @@ router.get("/:id",(req,res)=>{
 router.post("/",(req,res)=>{
     console.log(req.body)
     User.create({
+        name:req.body.name,
         email:req.body.email,
         password:req.body.password
     }).then(userData=>{
@@ -38,17 +39,19 @@ router.post("/",(req,res)=>{
         res.status(500).json({msg:"oh crap",err})
     })
 });
+
 // create project protect
 router.post("/", async (req, res) => {
     try {
-      const projectObj = await User.create({
+      const projectData = await User.create({
         name: req.body.name,
-        description: req.body.description
+        description: req.body.description,
+        deadline:req.body.deadline
       });
-      await projectObj.addcontract(req.body.contractIds);
+      await projectData.addcontract(req.body.contractIds);
     
       req.session.loggedIn = true;
-      res.json(projectObj);
+      res.json(projectData);
     } catch (err) {
       console.log(err);
       res.status(500).json({
@@ -57,16 +60,17 @@ router.post("/", async (req, res) => {
       });
     }
   });
+
 // create contract protect
 router.post("/", async (req, res) => {
     try {
-      const contractObj = await User.create({
+      const contractData = await User.create({
         name: req.body.name,
         description: req.body.description,
         cost: req.body.cost
       });
       req.session.loggedIn = true;
-      res.json(contractObj);
+      res.json(contractData);
     } catch (err) {
       console.log(err);
       res.status(500).json({

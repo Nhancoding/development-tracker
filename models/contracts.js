@@ -11,7 +11,7 @@ contracts.init({
             len:[1]
         }
     },
-    jobdescription: {
+    description: {
          type: DataTypes.TEXT,
          allowNull:false,
          validate:{
