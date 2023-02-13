@@ -41,7 +41,7 @@ router.post("/",(req,res)=>{
 });
 
 // create project protect
-router.post("/", async (req, res) => {
+router.post("/user/project", async (req, res) => {
     try {
       const projectData = await User.create({
         name: req.body.name,
@@ -62,7 +62,7 @@ router.post("/", async (req, res) => {
   });
 
 // create contract protect
-router.post("/", async (req, res) => {
+router.post("/contracts", async (req, res) => {
     try {
       const contractData = await User.create({
         name: req.body.name,
@@ -79,3 +79,5 @@ router.post("/", async (req, res) => {
       });
     }
   });
+
+  module.exports = router;

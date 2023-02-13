@@ -22,6 +22,13 @@ contracts.init({
          type: DataTypes.DOUBLE,
          allowNull:false,
         
+    },
+    projectID:{
+        type: DataTypes.INTEGER,
+        references:{
+            model:"contracts",
+            key:"id"
+        }
     }
 
 },{

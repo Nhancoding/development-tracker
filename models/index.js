@@ -15,12 +15,12 @@ User.hasMany(projects, {
 
 
 contracts.belongsTo(projects,{
-    onDelete:"CASCADE"
-    // foreignKey:"project_id" 
+    onDelete:"CASCADE",
+    foreignKey:"projectId" 
 });
 projects.hasMany(contracts,{
-    onDelete:"CASCADE"
-    // foreignKey:"project_id" 
+    onDelete:"CASCADE",
+    foreignKey:"projectId" 
 });
 
 // subcontractor.belongsTo(contracts,{

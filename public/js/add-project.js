@@ -26,7 +26,7 @@ document.querySelector("#projectForm").addEventListener("submit",e=>{
 
 document.querySelector('#addContract').addEventListener('click', e=>{
     e.preventDefault();
-    const contractObj = {
+    const contractData = {
         name:document.querySelector('#cname').value,
         description:document.querySelector("#cdescription").value,
         cost:document.querySelector("#ccost").value,

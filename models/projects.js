@@ -7,7 +7,7 @@ projects.init({
 
     name:{
         type: DataTypes.STRING,
-        allowNull:flase,
+        allowNull:false,
         validate:{
             len:[1]
         }
