@@ -3,9 +3,7 @@ const router = express.Router();
 const {User,projects,contracts} = require("../models");
 
 router.get("/",(req,res)=>{
-    User.findAll({
-        include:[projects]
-    }).then(userData=>{
+    User.findAll().then(userData=>{
         res.json(userData)
     }).catch(err=>{
         console.log(err);
@@ -70,7 +68,7 @@ router.delete("/:id",(req,res)=>{
 
 
 // create project protect
-router.post("/", async (req, res) => {
+router.post("/user/project", async (req, res) => {
     try {
       const projectData = await User.create({
         name: req.body.name,
@@ -91,9 +89,9 @@ router.post("/", async (req, res) => {
   });
 
 // create contract protect
-router.post("/", async (req, res) => {
+router.post("/contracts", async (req, res) => {
     try {
-      const contractData = await User.create({
+      const contractData = await contracts.create({
         name: req.body.name,
         description: req.body.description,
         cost: req.body.cost

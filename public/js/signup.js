@@ -1,6 +1,8 @@
 document.querySelector("#signupForm").addEventListener("submit",e=>{
     e.preventDefault();
     const signupObj = {
+
+        name:document.querySelector("#signupname").value,
         email:document.querySelector("#signupEmail").value,
         password:document.querySelector("#signupPassword").value
     }

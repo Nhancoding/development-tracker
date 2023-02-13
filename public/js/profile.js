@@ -22,3 +22,4 @@ document.querySelector("#show-edit-form").addEventListener("click",e=>{
     document.querySelector("#edit-profile").classList.remove("hide");
     document.querySelector(".profile-data").classList.add("hide");
 })
+

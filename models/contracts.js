@@ -18,23 +18,17 @@ contracts.init({
             len:[1]
         }   
     },
-    id: {
-        type: DataTypes.INTEGER,
-        allowNull:false,
-        autoIncrement:true,
-        primaryKey:true
+    cost: {
+         type: DataTypes.DOUBLE,
+         allowNull:false,
+        
     },
-    projectId: {
+    projectId:{
         type: DataTypes.INTEGER,
         references:{
             model:"projects",
             key:"id"
         }
-    },
-    cost: {
-         type: DataTypes.DOUBLE,
-         allowNull:false,
-        
     }
 
 },{
