@@ -4,13 +4,6 @@ const sequelize = require('../config/connection');
 class contracts extends Model {}
 
 contracts.init({
-    // crew:{
-    //     type: DataTypes.STRING,
-    //     allowNull:false,
-    //     validate:{
-    //         len:[1]
-    //     }   
-    // },
     jobdescription: {
          type: DataTypes.STRING,
          allowNull:false,
@@ -24,7 +17,7 @@ contracts.init({
         autoIncrement:true,
         primaryKey:true
     },
-    project_id: {
+    projectId: {
         type: DataTypes.INTEGER,
         references:{
             model:"projects",

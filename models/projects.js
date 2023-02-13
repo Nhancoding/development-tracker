@@ -5,6 +5,13 @@ class projects extends Model {}
 
 projects.init({
     
+    name:{
+        type: DataTypes.STRING,
+         allowNull:false,
+         validate:{
+            len:[1]
+        }   
+    },
     cost:{
         type: DataTypes.INTEGER,
         allowNull:false,
@@ -36,6 +43,13 @@ projects.init({
         allowNull:false,
         autoIncrement:true,
         primaryKey:true
+    },
+    public_id:{
+        type: DataTypes.STRING,
+        
+    },
+    url:{
+        type: DataTypes.STRING
     }
 },{
     sequelize,
