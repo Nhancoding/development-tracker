@@ -1,0 +1,22 @@
+[
+    {
+        "salary":100000,
+        "name":"demolition"
+    },
+    {
+        "salary":100000,
+        "name":"concrete"
+    },
+    {
+        "salary":100000,
+        "name":"framing"
+    },
+    {
+        "salary":100000,
+        "name":"design"
+    },
+    {
+        "salary":100000,
+        "name":"staging"
+    }
+]

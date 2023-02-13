@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const {User,projects} = require("../models");
+const {User,projects, contracts} = require("../models");
 
 router.get("/",(req,res)=>{
     projects.findAll().then(projectsData=>{
@@ -13,7 +13,7 @@ router.get("/",(req,res)=>{
 
 router.get("/:id",(req,res)=>{
     projects.findByPk(req.params.id,{
-        include:[User]
+        include:[User, contracts]
     }).then(projectsData=>{
         res.json(projectsData)
     }).catch(err=>{
@@ -25,10 +25,11 @@ router.get("/:id",(req,res)=>{
 router.post("/",(req,res)=>{
     console.log(req.body)
     projects.create({
+        name:req.body.name,
+        description:req.body.description,
         cost:req.body.cost,
         deadline:req.body.deadline,
-        status:req.body.status,
-        UserId:req.body.UserId
+        
     }).then(projectsData=>{
         res.json(projectsData)
     }).catch(err=>{
