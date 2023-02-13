@@ -1,8 +1,8 @@
 document.querySelector("#loginForm").addEventListener("submit",e=>{
     e.preventDefault();
     const loginObj = {
-        email:document.querySelector("#loginEmail").value,
-        password:document.querySelector("#loginPassword").value
+        email:document.querySelector("#loginEmail").value.trim(),
+        password:document.querySelector("#loginPassword").value.trim()
     }
     console.log(loginObj)
     fetch("/api/users/login",{
@@ -18,7 +18,4 @@ document.querySelector("#loginForm").addEventListener("submit",e=>{
             alert("There was a problem logging in")
         }
     })
-csm-profile-partials
 })
-
- dev

@@ -1,16 +1,10 @@
-const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
-const routes = require('./controllers');
-const helpers = require('./utils/helpers');
-
-const allRoutes = require("./controllers")
-
-const sequelize = require("./config/connection");
-
+const allRoutes = require('./controllers');
+const sequelize = require('./config/connection')
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 const hbs = exphbs.create({ helpers });
 
@@ -18,15 +12,19 @@ const hbs = exphbs.create({ helpers });
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.use(express.static('public'));
 
-
-app.use(allRoutes);
+const hbs = exphbs.create({});
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 app.get("/", (req, res) => {
-  res.send("Hello welcome to development tracker!");
+  res.render("login-signup",{isLoggedIn:false});
 });
+app.use(allRoutes);
 
-// sequelize.sync({ force: false }).then(function () {
+
+sequelize.sync({ force: false }).then(function () {
   app.listen(PORT, function () {
     console.log("App listening on PORT" + PORT);
   });
-// });
+});

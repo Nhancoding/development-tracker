@@ -29,6 +29,7 @@ const seed = async ()=>{
         individualHooks:true
     })
     // const subcontracts = await subcontractor.bulkCreate(subcontractorSeeds);
+    process.exit(0);
 }
 
 seed();
