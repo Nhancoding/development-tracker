@@ -40,6 +40,35 @@ router.post("/",(req,res)=>{
     })
 });
 
+
+router.put("/:id",(req,res)=>{
+    User.update(req.body,{
+        where:{
+            id:req.params.id
+        }
+    }).then(UserData=>{
+        res.json(UserData)
+    }).catch(err=>{
+        console.log(err);
+        res.status(500).json({msg:"error could not update user",err})
+    })
+});
+
+router.delete("/:id",(req,res)=>{
+    User.destroy({
+        where:{
+            id:req.params.id
+        }
+    }).then(UserData=>{
+        res.json(UserData)
+    }).catch(err=>{
+        console.log(err);
+        res.status(500).json({msg:"oh no error could not delete",err})
+    })
+});
+
+
+
 // create project protect
 router.post("/user/project", async (req, res) => {
     try {
