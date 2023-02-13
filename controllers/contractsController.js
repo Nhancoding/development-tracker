@@ -14,8 +14,10 @@ router.get("/",(req,res)=>{
 router.post("/",(req,res)=>{
     console.log(req.body)
     contracts.create({
-        jobdescription:req.body.jobdescription,
-        project_id:req.body.project_id
+        name: req.body.name,
+        description: req.body.description,
+        cost: req.body.cost
+        
     }).then(contractsData=>{
         res.json(contractsData)
     }).catch(err=>{
