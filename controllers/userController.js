@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const {User,projects} = require("../models");
+const {User,projects,contracts} = require("../models");
 
 router.get("/",(req,res)=>{
     User.findAll().then(userData=>{
@@ -38,5 +38,40 @@ router.post("/",(req,res)=>{
         res.status(500).json({msg:"oh crap",err})
     })
 });
-
-module.exports = router;
+// create project protect
+router.post("/", async (req, res) => {
+    try {
+      const projectObj = await User.create({
+        name: req.body.name,
+        description: req.body.description
+      });
+      await projectObj.addcontract(req.body.contractIds);
+    
+      req.session.loggedIn = true;
+      res.json(projectObj);
+    } catch (err) {
+      console.log(err);
+      res.status(500).json({
+        msg: "error",
+        err,
+      });
+    }
+  });
+// create contract protect
+router.post("/", async (req, res) => {
+    try {
+      const contractObj = await User.create({
+        name: req.body.name,
+        description: req.body.description,
+        cost: req.body.cost
+      });
+      req.session.loggedIn = true;
+      res.json(contractObj);
+    } catch (err) {
+      console.log(err);
+      res.status(500).json({
+        msg: "error",
+        err,
+      });
+    }
+  });

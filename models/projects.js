@@ -4,15 +4,15 @@ const sequelize = require('../config/connection');
 class projects extends Model {}
 
 projects.init({
-    
-    cost:{
-        type: DataTypes.INTEGER,
-        allowNull:false,
+
+    name:{
+        type: DataTypes.STRING,
+        allowNull:flase,
         validate:{
             len:[1]
-        }   
+        }
     },
-    deadline: {
+    deadline:{
          type: DataTypes.STRING,
          allowNull:false,
          validate:{
