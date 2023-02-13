@@ -17,17 +17,17 @@ projects.init({
         allowNull:false,
         validate:{
             len:[1]
-        }   
+        }
     },
-    deadline: {
+    deadline:{
          type: DataTypes.STRING,
          allowNull:false,
          validate:{
             len:[1]
         }   
     },
-    status:{
-        type:DataTypes.BOOLEAN,
+    description: {
+        type: DataTypes.TEXT,
         allowNull:false,
         validate:{
             len:[1]
@@ -51,6 +51,7 @@ projects.init({
     url:{
         type: DataTypes.STRING
     }
+    
 },{
     sequelize,
     modelName:"projects"

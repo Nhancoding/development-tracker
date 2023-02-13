@@ -1,7 +1,7 @@
 const User = require("./User");
 const projects = require("./projects");
 const contracts = require("./contracts")
-const subcontractor = require("./subcontractor")
+// const subcontractor = require("./subcontractor")
 
 
 projects.belongsTo(User,{
@@ -11,8 +11,7 @@ projects.belongsTo(User,{
 User.hasMany(projects, {
     onDelete:"CASCADE",
     foreignKey:"UserId"
-}
-    );
+});
 
 
 contracts.belongsTo(projects,{
@@ -24,10 +23,10 @@ projects.hasMany(contracts,{
     foreignKey:"projectId" 
 });
 
-subcontractor.belongsTo(contracts,{
-    onDelete:"CASCADE"
+// subcontractor.belongsTo(contracts,{
+//     onDelete:"CASCADE"
     // foreignKey:"contract_id"
-});
+// });
 
 
 
@@ -36,5 +35,5 @@ module.exports = {
     User,
     projects,
     contracts,
-    subcontractor
+    // subcontractor
 }

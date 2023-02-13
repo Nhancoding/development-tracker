@@ -26,8 +26,10 @@ router.get("/:id",(req,res)=>{
 router.post("/",(req,res)=>{
     console.log(req.body)
     contracts.create({
-        jobdescription:req.body.jobdescription,
-        projectId:req.body.projectId
+        name: req.body.name,
+        description: req.body.description,
+        cost: req.body.cost
+        
     }).then(contractsData=>{
         res.json(contractsData)
     }).catch(err=>{

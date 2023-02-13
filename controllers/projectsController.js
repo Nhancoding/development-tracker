@@ -22,7 +22,7 @@ router.get("/",(req,res)=>{
 
 router.get("/:id",(req,res)=>{
     projects.findByPk(req.params.id,{
-        include:[User]
+        include:[User, contracts]
     }).then(projectsData=>{
         res.json(projectsData)
     }).catch(err=>{
