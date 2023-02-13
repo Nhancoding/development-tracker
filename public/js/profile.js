@@ -1,5 +1,3 @@
-csm-profile-partials
-
 document.querySelector("#edit-profile").addEventListener("submit",e=>{
     e.preventDefault();
     const userObj = {

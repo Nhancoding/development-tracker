@@ -18,7 +18,4 @@ document.querySelector("#loginForm").addEventListener("submit",e=>{
             alert("There was a problem logging in")
         }
     })
-
 })
-
-
