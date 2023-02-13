@@ -11,5 +11,32 @@
     <button>Signup</button>
 </form>
 
+<a href="/">Home</a>
+        {{#if isLoggedIn}}
+            <a href="/project">project</a>
+            <button id="logoutBtn">Log me out</button>
+            <script src="js"></script>
+        {{else}}
+            <a href="/login">login</a>
+            <a href="/signup">signup</a>
+        {{/if}}
+
+        {{#if isLoggedOut}}
+            <a href="/project">project</a>
+            <button id="loginBtn">Log me in</button>
+            <script src="/js/"></script>
+        {{else}}
+            <a href="/logout">logout</a>
+            <a href="/signup">signup</a>
+        {{/if}}
+
+        {{#if isSignedup}}
+            <a href="/project">project</a>
+            <button id="registerBtn">Register</button>
+            <script src="js"></script>
+        {{else}}
+            <a href="login">login</a>
+            <a href="logout">logout</a>
+        {{/if}}
 
 <script src="/js/login.js"></script>

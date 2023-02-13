@@ -40,6 +40,7 @@ router.post("/",(req,res)=>{
     })
 });
 
+
 router.put("/:id",(req,res)=>{
     User.update(req.body,{
         where:{
@@ -65,6 +66,7 @@ router.delete("/:id",(req,res)=>{
         res.status(500).json({msg:"oh no error could not delete",err})
     })
 });
+
 
 
 // create project protect
