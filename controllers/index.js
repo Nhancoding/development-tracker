@@ -1,11 +1,18 @@
-const router = require("express").Router()
+const express = require("express");
+const router = express.Router();
 
-const homeRoutes = require("./homeRoutes")
-
-router.use('/', homeRoutes)
-
-router.use((req, res) => {
-    res.status(404).end()
+router.get("/",(req,res)=>{
+    res.send("this is the hp")
 })
+const userRoutes = require("./userController");
+router.use("/api/users",userRoutes);
 
-module.exports = router
+const projectRoutes = require("./projectsController");
+router.use("/api/projects",projectRoutes);
+
+
+const contractRoutes = require("./contractsController");
+router.use("/api/contracts",contractRoutes);
+
+
+module.exports = router;
