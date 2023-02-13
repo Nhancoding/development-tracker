@@ -15,23 +15,22 @@ document.querySelector("#projectForm").addEventListener("submit",e=>{
         headers:{
             "Content-Type":"application/json"
         }
-    }).then(res=>{
-        if(res.ok){
-           location.href="/"
-        } else {
-            alert("not working!")
-        }
-    })
+    }).then(projectId=>{return projectId.json()
+    //  store the ID in local storage
+    }).then()
+    .catch(err=>console.log(err))
 })
 
 document.querySelector('#addContract').addEventListener('click', e=>{
     e.preventDefault();
     const contractData = {
-        name:document.querySelector('#cname').value,
-        description:document.querySelector("#cdescription").value,
-        cost:document.querySelector("#ccost").value,
+        name:document.querySelector('#cname').value.trim(),
+        description:document.querySelector("#cdescription").value.trim(),
+        cost:document.querySelector("#ccost").value.trim(),
     }
     console.log(contractData)
+    // add the project ID in fetch"" or in body
+    // local storage .get
     fetch("/api/contracts",{
         method:"POST",
         body:JSON.stringify(contractData),

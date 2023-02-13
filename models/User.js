@@ -32,7 +32,8 @@ User.init({
             return userObj;
         }
     },
-    modelName:"User"
+    modelName:"User",
+    freezeTableName:true
 });
 
 module.exports=User

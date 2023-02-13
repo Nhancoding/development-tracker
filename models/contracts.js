@@ -23,10 +23,10 @@ contracts.init({
          allowNull:false,
         
     },
-    projectID:{
+    projectId:{
         type: DataTypes.INTEGER,
         references:{
-            model:"contracts",
+            model:"projects",
             key:"id"
         }
     }

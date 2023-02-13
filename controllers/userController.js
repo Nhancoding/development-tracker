@@ -64,7 +64,7 @@ router.post("/user/project", async (req, res) => {
 // create contract protect
 router.post("/contracts", async (req, res) => {
     try {
-      const contractData = await User.create({
+      const contractData = await contracts.create({
         name: req.body.name,
         description: req.body.description,
         cost: req.body.cost

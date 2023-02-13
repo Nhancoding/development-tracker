@@ -16,8 +16,8 @@ router.post("/",(req,res)=>{
     contracts.create({
         name: req.body.name,
         description: req.body.description,
-        cost: req.body.cost
-        
+        cost: req.body.cost,
+        projectId:req.body.projectId
     }).then(contractsData=>{
         res.json(contractsData)
     }).catch(err=>{
@@ -25,5 +25,5 @@ router.post("/",(req,res)=>{
         res.status(500).json({msg:"contract id error",err})
     })
 });
-
+// 
 module.exports=router;
