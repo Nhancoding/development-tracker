@@ -3,9 +3,7 @@ const router = express.Router();
 const {User,projects,contracts} = require("../models");
 
 router.get("/",(req,res)=>{
-    User.findAll({
-        include:[projects]
-    }).then(userData=>{
+    User.findAll().then(userData=>{
         res.json(userData)
     }).catch(err=>{
         console.log(err);
@@ -42,35 +40,8 @@ router.post("/",(req,res)=>{
     })
 });
 
-router.put("/:id",(req,res)=>{
-    User.update(req.body,{
-        where:{
-            id:req.params.id
-        }
-    }).then(UserData=>{
-        res.json(UserData)
-    }).catch(err=>{
-        console.log(err);
-        res.status(500).json({msg:"error could not update user",err})
-    })
-});
-
-router.delete("/:id",(req,res)=>{
-    User.destroy({
-        where:{
-            id:req.params.id
-        }
-    }).then(UserData=>{
-        res.json(UserData)
-    }).catch(err=>{
-        console.log(err);
-        res.status(500).json({msg:"oh no error could not delete",err})
-    })
-});
-
-module.exports = router;
 // create project protect
-router.post("/", async (req, res) => {
+router.post("/user/project", async (req, res) => {
     try {
       const projectData = await User.create({
         name: req.body.name,
@@ -91,9 +62,9 @@ router.post("/", async (req, res) => {
   });
 
 // create contract protect
-router.post("/", async (req, res) => {
+router.post("/contracts", async (req, res) => {
     try {
-      const contractData = await User.create({
+      const contractData = await contracts.create({
         name: req.body.name,
         description: req.body.description,
         cost: req.body.cost
@@ -108,3 +79,5 @@ router.post("/", async (req, res) => {
       });
     }
   });
+
+  module.exports = router;
