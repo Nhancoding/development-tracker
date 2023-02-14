@@ -6,12 +6,14 @@ const Contracts = require("./contracts")
 
 Projects.belongsTo(User,{
     onDelete:"CASCADE",
+    
    
 });
 User.hasMany(Projects),
 
 Contracts.belongsTo(Projects,{
-   onDelete:"CASCADE"
+   onDelete:"CASCADE",
+   
 });
 Projects.hasMany(Contracts)
 

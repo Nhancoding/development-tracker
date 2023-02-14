@@ -42,7 +42,7 @@ app.get("/", (req, res) => {
 
 
 
-sequelize.sync({ force: false }).then(function () {
+sequelize.sync({ force: false, logging:false }).then(function () {
   app.listen(PORT, function () {
     console.log("App listening on PORT" + PORT);
   });
