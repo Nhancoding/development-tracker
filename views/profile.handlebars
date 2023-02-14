@@ -1,24 +1,25 @@
-<section {{!-- This is profile homepage--}}
-     <h1>Welcome back, {{user.name}}!</h1>
-    {{!--will display the projects created by the user--}}
-    <div>
+    <div class="profile-aside">
+        <h1>Welcome back, {{user.name}}!</h1>
+        {{!--will display the projects created by the user--}}
         {{!-- add a button to create new project--}}
         <h2>Add a project</h2>
         <a href="/add-project">Add new</a>
     </div>
-    <h2>My projects</h2>
-    {{#each projects  as |project|}}
-    <section class="project-box">
-        <div>
-            <h3 class="project-name">{{name}}</h3>
-            <h4>Project Description</h4>
-            <p>{{description}}</p>
-            <h4>Project Deadline</h4>
-            <p>{{deadline}}</p>
-        </div>
-        {{!-- somehow render the cloudinary images here after user created --}}
-
-        <div class="shown-contracts">
+<div class="display-projects">
+    <div class="profile-projects">
+        <h2>My projects</h2>
+        {{#each projects as |project|}}
+        <section class="project-box">
+            <div>
+                <h3 class="project-name">{{name}}</h3>
+                <h4>Project Description</h4>
+                <p>{{description}}</p>
+                <h4>Project Deadline</h4>
+                <p>{{deadline}}</p>
+            </div>
+    </div>
+    <div class="shown-contracts">
+        <div class="profile-contracts">
             <h4>Contracts</h4>
             {{#each contracts as |contract|}}
             <section class="contract-box">
@@ -30,12 +31,12 @@
 
             </section>
             {{/each}}
-
         </div>
+    </div>
 
 
-    </section>
-    {{/each}}
+</div>
+{{/each}}
 
 </section>
 <script src="/js/profile.js"></script>

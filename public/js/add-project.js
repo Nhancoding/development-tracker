@@ -25,6 +25,8 @@ document.querySelector("#project-submit").addEventListener("click", e => {
     e.preventDefault();
     document.querySelector("#submitProject").classList.add("hide");
     document.querySelector("#newProjName").classList.remove("hide");
+    document.querySelector("#contractForm").classList.remove("hide");
+
 
     const projectData = {
         name: document.querySelector("#pname").value,
@@ -59,6 +61,8 @@ document.querySelector("#project-submit").addEventListener("click", e => {
 
 document.querySelector('#submitContract').addEventListener('submit', e => {
     e.preventDefault();
+ 
+
 
     const contractData = {
         name: document.querySelector('#cname').value.trim(),
@@ -79,7 +83,7 @@ document.querySelector('#submitContract').addEventListener('submit', e => {
         }
     })
 
-    document.querySelector('#submit').addEventListener('click', e => {
+    document.querySelector('#contract-submit').addEventListener('click', e => {
         function createContractList(list) {
             let li = document.createElement('li');
             li.textContent = list;
@@ -101,13 +105,3 @@ document.querySelector('#submitContract').addEventListener('submit', e => {
 
 
     // ADD: "finished" btn to re route to profile
-// document.querySelector("#finished").addEventListener("click", () => {
-//     fetch("/profile", {
-//     }).then(res => {
-//         if (res.ok) {
-//             location.reload()
-//         } else {
-//             alert("something went wrong")
-//         }
-//     })
-// })
