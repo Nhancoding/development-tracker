@@ -1,0 +1,51 @@
+<div class="new-project-page">
+    <div class="project-form" id="projectForm">
+        <h2 class="addProjectsTitle">Add new project</h2>
+        <div>
+            <form id="submitProject">
+                <label for="pname">Project name:</label>
+                <input type="text" name="projectname" id="pname" placeholder="enter project name">
+
+                <label for="pdeadline">Project deadline:</label>
+                <input type="text" name="projectdeadline" id="pdeadline" placeholder="enter project deadline">
+
+                <label for="pdescription">Description:</label>
+                <input type="text" name="projectdescription" id="pdescription" placeholder="enter description">
+
+                <button id="upload_widget" class="cloudinary-button">Upload files</button>
+
+
+                <button class="submit-btn" id="project-submit">submit</button>
+            </form>
+        </div>
+        {{!-- <h3>append the projects name in place of form </h3> --}}
+        <h3 id="newProjName"></h3>
+    </div>
+    <div class="new-contract, hide"  id="contractForm">
+        <h3>Enter contract info below to add to your project</h3>
+        <section id="contractBox">
+            <form class="hidden" id="submitContract">
+                <label for="cname">Contract name:</label>
+                <input type="text" name="contractname" id="cname" placeholder="enter contract name">
+
+                <label for="cdescription">Description:</label>
+                <input type="text" name="contractdescription" id="cdescription" placeholder="enter description">
+
+                <label for="cprice">Cost:</label>
+                <input type="text" name="contractcost" id="ccost" placeholder="estimated cost">
+
+
+                <button class="submit-btn" id="contract-submit">submit</button>
+            </form>
+        </section>
+        {{!-- create a Ul to list the added contract names --}}
+        <a href="/profile"> Finished</a>
+        <div>
+            <ul id="contract-list"></ul>
+        </div>
+
+    </div>
+<script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
+
+    <script src="/js/add-project.js"></script>
+</div>
