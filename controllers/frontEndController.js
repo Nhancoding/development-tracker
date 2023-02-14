@@ -22,7 +22,7 @@ router.delete("/logout", (req, res) => {
 
 router.get("/profile", async (req, res) => {
     if (!req.session.userId) {
-        return res.redirect("/login")
+        return res.redirect("login")
     }
     // get userId from req.session
     const userdata = await User.findByPk(req.session.userId)

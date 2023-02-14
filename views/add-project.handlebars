@@ -13,13 +13,13 @@
                 <input type="text" name="projectdescription" id="pdescription" placeholder="enter description">
 
 
-                <button class="submit-btn" id="submit">submit</button>
+                <button class="submit-btn" id="project-submit">submit</button>
             </form>
         </div>
         {{!-- <h3>append the projects name in place of form </h3> --}}
         <h3 id="newProjName"></h3>
     </div>
-    <div class="new-contract" id="contractForm">
+    <div class="new-contract, hide"  id="contractForm">
         <h3>Enter contract info below to add to your project</h3>
         <section id="contractBox">
             <form class="hidden" id="submitContract">
@@ -33,15 +33,13 @@
                 <input type="text" name="contractcost" id="ccost" placeholder="estimated cost">
 
 
-                <button class="submit-btn" id="submit">submit</button>
+                <button class="submit-btn" id="contract-submit">submit</button>
             </form>
         </section>
         {{!-- create a Ul to list the added contract names --}}
-        <button  <a ref="/login"> </a> Finished</button>
+        <a href="/profile"> Finished</a>
         <div>
-            <ul id="contract-list">
-
-            </ul>
+            <ul id="contract-list"></ul>
         </div>
 
     </div>
