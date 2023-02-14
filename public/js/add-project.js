@@ -1,8 +1,27 @@
 // const {JSON}= require("sequelize");
 
 // const router = require("../../controllers/frontEndController");
+let url;
+var myWidget = cloudinary.createUploadWidget({
+    cloudName: 'dfejwyntg', 
+    uploadPreset: 'ml_default'},
+     (error, result) => { 
+      if (!error && result && result.event === "success") { 
+        console.log(result.info.url); 
+        url = result.info.url
+      } else {
+          console.log(error)
+      }
+    }
+  )
+  
+  document.getElementById("upload_widget").addEventListener("click", function(e){
+      e.preventDefault()
+      myWidget.open();
+    }, false);
 
-document.querySelector("#submitProject").addEventListener("submit", e => {
+
+document.querySelector("#project-submit").addEventListener("click", e => {
     e.preventDefault();
     document.querySelector("#submitProject").classList.add("hide");
     document.querySelector("#newProjName").classList.remove("hide");
@@ -11,6 +30,7 @@ document.querySelector("#submitProject").addEventListener("submit", e => {
         name: document.querySelector("#pname").value,
         deadline: document.querySelector("#pdeadline").value,
         description: document.querySelector("#pdescription").value,
+        image: url
 
     }
     console.log(projectData)
