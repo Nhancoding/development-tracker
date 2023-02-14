@@ -1,5 +1,5 @@
 document.querySelector("#logoutBtn").addEventListener("click",()=>{
-    fetch("/api/users/logout",{
+    fetch("/logout",{
         method:"DELETE"
     }).then(res=>{
         if(res.ok){
