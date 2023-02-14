@@ -52,13 +52,13 @@ router.post("/", async (req, res) => {
       name: req.body.name,
       description: req.body.description,
       deadline: req.body.deadline,
-      UserId: req.session.UserId,
+      UserId: req.session.userId,
     //   public_id:r.public_id,
       url:req.body.image
     });
     //   await projectData.addcontract(req.body.contractIds);
 
-    req.session.loggedIn = true;
+    
     res.json(projectData);
   } catch (err) {
     console.log(err);
