@@ -1,0 +1,15 @@
+.hide {
+    display: none;
+}
+.addProjectsTitle {
+    text-align: center;
+}
+form {
+    position: relative;
+    text-align: center;
+    padding: 25px;
+}
+.new-project-page {
+    text-align: center;
+    height: 50vh;
+}
