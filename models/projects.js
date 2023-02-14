@@ -25,15 +25,15 @@ projects.init({
         validate:{
             len:[1]
     }}
-    // ,
+    ,
 
-    // public_id:{
-    //     type: DataTypes.STRING,
+    public_id:{
+        type: DataTypes.STRING,
         
-    // },
-    // url:{
-    //     type: DataTypes.STRING
-    // }
+    },
+    url:{
+        type: DataTypes.STRING
+    }
     
 },{
     sequelize,
