@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const {User,projects,contracts} = require("../models");
+const {User,Projects,Contracts} = require("../models");
+const bcrypt = require("bcrypt");
+
 
 router.get("/",(req,res)=>{
     User.findAll().then(userData=>{
@@ -10,11 +12,35 @@ router.get("/",(req,res)=>{
         res.status(500).json({msg:"oh noooo",err})
     })
 });
+// login route
+router.post("/login",(req,res)=>{
+    User.findOne({
+    where:{
+     email:req.body.email
+    }
+    }).then(userData=>{
+     if(!userData){
+         return res.status(401).json({msg:"incorrect email or password"})
+     } else {
+         if(bcrypt.compareSync(req.body.password,userData.password)){
+             req.session.userId = userData.id;
+             req.session.userEmail = userData.email;
+             return res.json(userData)
+         } else {
+             return res.status(401).json({msg:"incorrect email or password"})
+         }
+     }
+    }).catch(err=>{
+     console.log(err);
+     res.status(500).json({msg:"oh noes!",err})
+    })
+ })
+ 
 
 //find user
 router.get("/:id",(req,res)=>{
     User.findByPk(req.params.id,{
-        include:[projects]
+        include:[Projects]
     }).then(userData=>{
         res.json(userData)
     }).catch(err=>{
@@ -93,10 +119,11 @@ router.post("/user/project", async (req, res) => {
 // create contract protect
 router.post("/contracts", async (req, res) => {
     try {
-      const contractData = await contracts.create({
+      const contractData = await Contracts.create({
         name: req.body.name,
         description: req.body.description,
-        cost: req.body.cost
+        cost: req.body.cost,
+        // projectId:req.body.projectId
       });
       req.session.loggedIn = true;
       res.json(contractData);

@@ -14,7 +14,7 @@ router.use("/api/projects",projectRoutes);
 const contractRoutes = require("./contractsController");
 router.use("/api/contracts",contractRoutes);
 
-// const frontEndRoutes = require("./frontEndController");
-// router.use("/",frontEndRoutes);
+const frontEndRoutes = require("./frontEndController");
+router.use("/",frontEndRoutes);
 
 module.exports = router;

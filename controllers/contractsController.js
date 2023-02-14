@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const {projects,contracts} = require("../models");
+const {Projects,Contracts} = require("../models");
 
 router.get("/",(req,res)=>{
-    contracts.findAll().then(contractsData=>{
+    Contracts.findAll().then(contractsData=>{
         res.json(contractsData)
     }).catch(err=>{
         console.log(err);
@@ -13,7 +13,7 @@ router.get("/",(req,res)=>{
 
 router.post("/",(req,res)=>{
     console.log(req.body)
-    contracts.create({
+    Contracts.create({
         name: req.body.name,
         description: req.body.description,
         cost: req.body.cost,

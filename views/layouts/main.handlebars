@@ -12,18 +12,19 @@
        
         {{!-- TODO: add  dynamic navigation--}}
         <a href="/">Home</a>
-        {{#if isLoggedIn}}
+        {{!-- {{#if isLoggedIn}}
             <a href="/profile">profile</a>
             <button id="logoutBtn">Log me out!</button>
-            <script src="/js/logout.js"></script>
+         
         {{else}}
             <a href="/login-signup">Login</a>
             
-        {{/if}}
+        {{/if}} --}}
     </header>
     <main>
         {{{body}}}
     </main>
     <footer><p>footer</p></footer>
 </body>
-</html>
+</html>  
+{{!-- <script src="/js/logout.js"></script> --}}

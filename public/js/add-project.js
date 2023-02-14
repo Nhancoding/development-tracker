@@ -1,11 +1,12 @@
-const addedContracts = [];
+const {JSON}= require("sequelize");
 
 document.querySelector("#projectForm").addEventListener("submit",e=>{
     e.preventDefault();
     const projectData = {
         name:document.querySelector("#pname").value,
+        deadline:document.querySelector("#pdeadline"),
         description:document.querySelector("#pdescription").value,
-        contractIds:addedContracts
+        
     }
     console.log(projectData)
 
@@ -17,7 +18,9 @@ document.querySelector("#projectForm").addEventListener("submit",e=>{
         }
     }).then(projectId=>{return projectId.json()
     //  store the ID in local storage
-    }).then()
+    // could need stringify project id after ""
+    // JSON.stringify(projectId)
+    }).then(localStorage.setItem("projectId", projectId))
     .catch(err=>console.log(err))
 })
 
@@ -27,6 +30,8 @@ document.querySelector('#addContract').addEventListener('click', e=>{
         name:document.querySelector('#cname').value.trim(),
         description:document.querySelector("#cdescription").value.trim(),
         cost:document.querySelector("#ccost").value.trim(),
+        projectId:localStorage.getItem("projectId")
+        // JSON.parse(^)
     }
     console.log(contractData)
     // add the project ID in fetch"" or in body
@@ -44,14 +49,4 @@ document.querySelector('#addContract').addEventListener('click', e=>{
             alert("not working")
         }
     })
-})
-document.querySelector("#submit").addEventListener("click",e=>{
-    const contractId = document.querySelector("#submitContract").value;
-    if(!addedContracts.includes(contractId)){
-        addedContracts.push(contractId)
-        // createAnElement that shows the title of contract in contract-box
-        // const newContract=document.createElement('<p>');
-        // newContract.setAttribute("class","contract-peek");
-        // document.querySelector("#contractBox").append(newContract)
-    }
 })
