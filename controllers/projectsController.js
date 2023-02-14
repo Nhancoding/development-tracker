@@ -31,7 +31,7 @@ router.get("/:id",(req,res)=>{
     })
 });
 
-router.post("/",async(req,res)=>{
+
     // console.log(req.body)
     // let r = ""
     // try {
@@ -43,14 +43,34 @@ router.post("/",async(req,res)=>{
     // } catch (error) {
     //     console.log(error);
     // }
-    
-    Projects.create(req.body).then(projectsData=>{
-        res.json(projectsData)
-    }).catch(err=>{
-        console.log(err);
-        res.status(500).json({msg:"oh craaaaap",err})
-    })
-});
+    router.post("/", async (req, res) => {
+        try {
+          const projectData = await Projects.create({
+            name: req.body.name,
+            description: req.body.description,
+            deadline:req.body.deadline,
+            userId:req.session.userId
+          });
+        //   await projectData.addcontract(req.body.contractIds);
+        
+          req.session.loggedIn = true;
+          res.json(projectData);
+        } catch (err) {
+          console.log(err);
+          res.status(500).json({
+            msg: "error",
+            err,
+          });
+        }
+      });
+// router.post("/",async(req,res)=>{    
+//     Projects.create(req.body).then(projectsData=>{
+//         res.json(projectsData)
+//     }).catch(err=>{
+//         console.log(err);
+//         res.status(500).json({msg:"oh craaaaap",err})
+//     })
+// });
 
 router.put("/:id",(req,res)=>{
     Projects.update(req.body,{

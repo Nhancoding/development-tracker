@@ -32,10 +32,13 @@ router.post("/login",(req,res)=>{
      }
     }).catch(err=>{
      console.log(err);
-     res.status(500).json({msg:"oh noes!",err})
+     res.status(500).json({msg:"big err",err})
     })
  })
- 
+ router.delete("/logout", (req, res) => {
+    req.session.destroy();
+    res.send("logged out!");
+  });
 
 //find user
 router.get("/:id",(req,res)=>{
@@ -93,28 +96,6 @@ router.delete("/:id",(req,res)=>{
     })
 });
 
-
-
-// create project protect
-router.post("/user/project", async (req, res) => {
-    try {
-      const projectData = await User.create({
-        name: req.body.name,
-        description: req.body.description,
-        deadline:req.body.deadline
-      });
-      await projectData.addcontract(req.body.contractIds);
-    
-      req.session.loggedIn = true;
-      res.json(projectData);
-    } catch (err) {
-      console.log(err);
-      res.status(500).json({
-        msg: "error",
-        err,
-      });
-    }
-  });
 
 // create contract protect
 router.post("/contracts", async (req, res) => {
