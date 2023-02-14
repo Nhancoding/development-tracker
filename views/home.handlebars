@@ -1,9 +1,7 @@
 <h1>Homepage</h1>
 
-
-<body>
-    <header>
-        <h1>Development Tracker</h1>
+<header>
+    <h1>Development Tracker</h1>
         <nav>
             <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown"
                 class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
@@ -34,16 +32,21 @@
                 </ul>
             </div>
         </nav>
-    </header>
+</header>
 
-    <script type="text/x-handlebars-template">
+    <scrip type="text/x-handlebars-template">
     <div id="developmentData">
         
     </div>
 
     
+<body>
+    <div id="cloudinary">
+        image carousel {{{body}}}
+    </div>
 
-    <h2>Development Tracker</h2>
+    <div id="about">
+        <h2>Development Tracker</h2>
 
     var developmentInfo = "<p>The purpose of this development tracker..</p>";
 
@@ -51,12 +54,10 @@
 
     var data = template({});
     
-    </script>
-    <script type="text/x-handlebars-template">
-    <div id="bioData">
-        My name is {{firstname}} {{lastname}}.
+    <script type="text/x-handlebars-template"></script>
     </div>
-
+ 
+    <div id="dev-team">    
     <h2>About our team</h2>
     <p>{{firstname}} {{lastname}}</p>
     <p>{{firstname}} {{lastname}}</p>
@@ -85,15 +86,7 @@
     var template = Handlebars.compile(teamInfo);
 
     var data = template({});
-    
-     </>
+    </div>
 
-    <main>
-        image carousel? {{{body}}}
-    </main>
-    <footer>
-        <h2>This is the footer</h2>
-    </footer>
 </body>
 
-</html>
