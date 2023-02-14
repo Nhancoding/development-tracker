@@ -27,10 +27,10 @@ projects.init({
     }}
     ,
 
-    public_id:{
-        type: DataTypes.STRING,
+    // public_id:{
+    //     type: DataTypes.STRING,
         
-    },
+    // },
     url:{
         type: DataTypes.STRING
     }

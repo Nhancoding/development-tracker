@@ -104,9 +104,9 @@ router.post("/contracts", async (req, res) => {
         name: req.body.name,
         description: req.body.description,
         cost: req.body.cost,
-        // projectId:req.body.projectId
+        projectId:req.body.projectId
       });
-      req.session.loggedIn = true;
+      
       res.json(contractData);
     } catch (err) {
       console.log(err);
