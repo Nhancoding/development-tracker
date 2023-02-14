@@ -49,7 +49,7 @@ router.get("/:id",(req,res)=>{
             name: req.body.name,
             description: req.body.description,
             deadline:req.body.deadline,
-            userId:req.session.userId
+            UserId:req.session.UserId
           });
         //   await projectData.addcontract(req.body.contractIds);
         
