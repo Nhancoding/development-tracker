@@ -22,14 +22,9 @@ contracts.init({
          type: DataTypes.DOUBLE,
          allowNull:false,
         
-    },
-    projectId:{
-        type: DataTypes.INTEGER,
-        references:{
-            model:"projects",
-            key:"id"
-        }
     }
+  
+
 
 },{
     sequelize,

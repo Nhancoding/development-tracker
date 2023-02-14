@@ -12,13 +12,6 @@ projects.init({
             len:[1]
         }   
     },
-    cost:{
-        type: DataTypes.INTEGER,
-        allowNull:false,
-        validate:{
-            len:[1]
-        }
-    },
     deadline:{
          type: DataTypes.STRING,
          allowNull:false,
@@ -31,26 +24,16 @@ projects.init({
         allowNull:false,
         validate:{
             len:[1]
-    }},
-    UserId:{
-        type: DataTypes.INTEGER,
-        allowNull:false,
-        validate:{
-            len:[1]
-        }   
-    },id: {
-        type: DataTypes.INTEGER,
-        allowNull:false,
-        autoIncrement:true,
-        primaryKey:true
-    },
-    public_id:{
-        type: DataTypes.STRING,
+    }}
+    // ,
+
+    // public_id:{
+    //     type: DataTypes.STRING,
         
-    },
-    url:{
-        type: DataTypes.STRING
-    }
+    // },
+    // url:{
+    //     type: DataTypes.STRING
+    // }
     
 },{
     sequelize,

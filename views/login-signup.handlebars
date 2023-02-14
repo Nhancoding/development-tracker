@@ -6,12 +6,14 @@
 </form>
 <h1>Sign up Here!</h1>
 <form id="signupForm" class="authForm">
+
+    <input type="text" placeholder="name" id="signupName">
     <input type="text" placeholder="email" id="signupEmail">
     <input type="password"id="signupPassword">
     <button>Signup</button>
 </form>
 
-<a href="/">Home</a>
+{{!-- <a href="/">Home</a>
         {{#if isLoggedIn}}
             <a href="/project">project</a>
             <button id="logoutBtn">Log me out</button>
@@ -37,6 +39,7 @@
         {{else}}
             <a href="login">login</a>
             <a href="logout">logout</a>
-        {{/if}}
+        {{/if}} --}}
 
 <script src="/js/login.js"></script>
+<script src="/js/signup.js"></script>
