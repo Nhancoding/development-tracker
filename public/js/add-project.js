@@ -61,10 +61,8 @@ document.querySelector("#project-submit").addEventListener("click", e => {
         .catch(err => console.log(err))
 })
 
-document.querySelector('#contract-submit').addEventListener('click', e => {
+document.querySelector('#submitContract').addEventListener('click', e => {
     e.preventDefault();
-
-
 
     const contractData = {
         name: document.querySelector('#cname').value.trim(),
