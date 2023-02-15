@@ -100,12 +100,3 @@ document.querySelector("#contract-submit").addEventListener("click", (e) => {
   newProjName.appendChild(createContractList(contractData.name));
 });
 
-// document.querySelector('#submit').addEventListener('click', e => {
-//     if (res.ok) {
-//         location.href = "/profile"
-//     } else {
-//         alert("not working")
-//     }
-// })
-
-// ADD: "finished" btn to re route to profile
