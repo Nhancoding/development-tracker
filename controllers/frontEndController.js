@@ -54,13 +54,12 @@ router.get("/login", (req, res) => {
 })
 // rendering the create project page
 router.get("/add-project", (req, res) => {
-    // if(!req.session.loggedIn){
-    //     return res.redirect("/")
-    // }
+    if(!req.session.userId){
+        return res.redirect("/login")
+    }
     console.log("/add-project",res);
     res.render("add-project", {
-        isLoggedIn: req.session.loggedIn,
-        userId: req.session.userId,
+        UserId: req.session.userId,
         //send your object w img url with res object
     })
 })

@@ -1,7 +1,7 @@
 // const {JSON}= require("sequelize");
 
 // const router = require("../../controllers/frontEndController");
-let url;
+let url=null
 var myWidget = cloudinary.createUploadWidget(
   {
     cloudName: "dfejwyntg",
@@ -89,23 +89,26 @@ document.querySelector("#submitContract").addEventListener("submit", (e) => {
     },
   });
 
-});
-document.querySelector("#contract-submit").addEventListener("click", (e) => {
-  function createContractList(list) {
-    let li = document.createElement("ul");
-    li.textContent = list;
-    return li;
-  }
-  const newProjName = document.querySelector("#contract-list");
-  newProjName.appendChild(createContractList(contractData.name));
-});
 
-// document.querySelector('#submit').addEventListener('click', e => {
-//     if (res.ok) {
-//         location.href = "/profile"
-//     } else {
-//         alert("not working")
-//     }
-// })
+    // var list = document.getElementById("contractList")
 
-// ADD: "finished" btn to re route to profile
+
+    // document.getElementById("contract-submit").addEventListener('click', function (e) {
+    //     e.preventDefault()
+    //     var inputValue = document.getElementById("cname");
+    //     var li = document.createElement('ul')
+    //     li.textContent = inputValue.value
+    //     list.appendChild(li)
+        
+    // })
+    const newProjName = document.querySelector("#contract-list");
+    newProjName.appendChild(createContractList(contractData.name));
+    document.querySelector("#cname").value = ""
+    document.querySelector("#cdescription").value = ""
+    document.querySelector("#ccost").value = ""
+});
+function createContractList(list) {
+  let li = document.createElement("ul");
+  li.textContent = list;
+  return li;
+}
