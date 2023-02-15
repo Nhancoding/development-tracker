@@ -3,22 +3,23 @@
 // const router = require("../../controllers/frontEndController");
 let url;
 var myWidget = cloudinary.createUploadWidget({
-    cloudName: 'dfejwyntg', 
-    uploadPreset: 'ml_default'},
-     (error, result) => { 
-      if (!error && result && result.event === "success") { 
-        console.log(result.info.url); 
-        url = result.info.url
-      } else {
-          console.log(error)
-      }
+    cloudName: 'dfejwyntg',
+    uploadPreset: 'ml_default'
+},
+    (error, result) => {
+        if (!error && result && result.event === "success") {
+            console.log(result.info.url);
+            url = result.info.url
+        } else {
+            console.log(error)
+        }
     }
-  )
-  
-  document.getElementById("upload_widget").addEventListener("click", function(e){
-      e.preventDefault()
-      myWidget.open();
-    }, false);
+)
+
+document.getElementById("upload_widget").addEventListener("click", function (e) {
+    e.preventDefault()
+    myWidget.open();
+}, false);
 
 
 document.querySelector("#project-submit").addEventListener("click", e => {
@@ -35,10 +36,10 @@ document.querySelector("#project-submit").addEventListener("click", e => {
         image: url
 
     }
-    console.log("new project data",projectData)
+    console.log("new project data", projectData)
     if (projectData) {
-        
-        document.querySelector("#cloudinary-img").setAttribute("src",projectData.image)
+
+        document.querySelector("#cloudinary-img").setAttribute("src", projectData.image)
     }
     document.querySelector("#newProjName").append(projectData.name)
     fetch("/api/projects", {
@@ -60,9 +61,9 @@ document.querySelector("#project-submit").addEventListener("click", e => {
         .catch(err => console.log(err))
 })
 
-document.querySelector('#submitContract').addEventListener('submit', e => {
+document.querySelector('#contract-submit').addEventListener('click', e => {
     e.preventDefault();
- 
+
 
 
     const contractData = {
@@ -70,9 +71,10 @@ document.querySelector('#submitContract').addEventListener('submit', e => {
         description: document.querySelector("#cdescription").value.trim(),
         cost: document.querySelector("#ccost").value.trim(),
         projectId: JSON.parse(localStorage.getItem("projectId"))
-           }
+    }
     console.log(contractData)
-    
+  
+
     fetch("/api/contracts", {
         method: "POST",
         body: JSON.stringify(contractData),
@@ -81,18 +83,30 @@ document.querySelector('#submitContract').addEventListener('submit', e => {
         }
     })
 
-    document.querySelector('#contract-submit').addEventListener('click', e => {
-        function createContractList(list) {
-            let li = document.createElement('li');
-            li.textContent = list;
-            return li;
-        }
-            const newProjName = document.querySelector("#contract-list");
-            newProjName.append(createContractList(contractData.name));
-            
-
-        
-    })
+    //     document.querySelector('#contract-submit').addEventListener('click', (e) => {
+    //         function createContractList(list) {
+    //             let li = document.createElement('li');
+    //             li.textContent = list;
+    //             return li;
+    //         }
+    //             const newProjName = document.querySelector("#contractList");
+    //             newProjName.appendChild(createContractList(contractData.name));
 
 
+
+    //     })
+
+
+    
 })
+    // var list = document.getElementById("contractList")
+
+    // //Add to do's
+    // document.getElementById("contract-submit").addEventListener('click', function (e) {
+    //     e.preventDefault()
+    //     var inputValue = document.getElementById("cname");
+    //     var li = document.createElement('ul')
+    //     li.textContent = inputValue.value
+    //     list.appendChild(li)
+        
+    // })
