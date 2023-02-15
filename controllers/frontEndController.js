@@ -3,7 +3,7 @@ const { Projects, Contracts, User } = require("../models");
 const router = express.Router();
 
 router.get("/login", (req, res) => {
-    if (req.session.loggedIn) {
+    if (req.session.userId) {
         return res.redirect("/")
     } else {
         res.render("login-signup")
@@ -11,11 +11,10 @@ router.get("/login", (req, res) => {
 })
 router.get("/", (req, res) => {
     res.render("home", {
-        isLoggedIn: req.session.loggedIn,
-        userId: req.session.userId,
+        UserId: req.session.userId,
     })
 })
-router.delete("/logout", (req, res) => {
+router.delete("/logout", (req, res) => {``
     req.session.destroy();
     return res.render("home")
 });
@@ -45,11 +44,11 @@ router.get("/profile", async (req, res) => {
 })
 // use that id to query user projects 
 router.get("/login", (req, res) => {
-    if (req.session.loggedIn) {
+    if (req.session.userId) {
         return res.redirect("/")
     }
     // res.render("login-signup",{
-    //     isLoggedIn:req.session.loggedIn,
+    //     isLoggedIn:req.session.userId,
     //     userId:req.session.userId,
     // })
 })
