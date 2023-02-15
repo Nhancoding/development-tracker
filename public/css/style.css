@@ -34,4 +34,30 @@ form {
 
 /* ADD NEW PROJECT */
 
+.authForm {
+    margin: auto;
+    text-align: center;
+    width: 220px;
+    border: 10px solid seagreen;
+    padding: 5px solid maroon;
+    margin: 20px;
+}
+.loginInfo {
+    text-align: center;
+    margin: auto;
+    display: block;
+    outline-style: solid; 
+    outline-color: blueviolet;
+}
+.signupInfo {
+    text-align: center;
+    margin: auto;
+    display: block;
+    outline-style: solid;
+    outline-color: blueviolet;
+}
+
+
+
+
 
