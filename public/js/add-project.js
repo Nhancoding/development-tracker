@@ -45,9 +45,6 @@ document.querySelector("#project-submit").addEventListener("click", e => {
         }
     }).then(projectId => {
         return projectId.json()
-        //  store the ID in local storage
-        // could need stringify project id after ""
-        // JSON.stringify(projectId)
     }).then(projectId => {
         const projectID = JSON.stringify(projectId);
         const projectIDstring = projectId.id;
@@ -69,12 +66,9 @@ document.querySelector('#submitContract').addEventListener('submit', e => {
         description: document.querySelector("#cdescription").value.trim(),
         cost: document.querySelector("#ccost").value.trim(),
         projectId: JSON.parse(localStorage.getItem("projectId"))
-
-        // JSON.parse(^)
-    }
+           }
     console.log(contractData)
-    // add the project ID in fetch"" or in body
-    // local storage .get
+    
     fetch("/api/contracts", {
         method: "POST",
         body: JSON.stringify(contractData),
@@ -89,19 +83,12 @@ document.querySelector('#submitContract').addEventListener('submit', e => {
             li.textContent = list;
             return li;
         }
-        const newProjName = document.querySelector("#contract-list");
-        newProjName.appendChild(createContractList(contractData.name))
+            const newProjName = document.querySelector("#contract-list");
+            newProjName.append(createContractList(contractData.name));
+            
 
+        
     })
+
+
 })
-
-// document.querySelector('#submit').addEventListener('click', e => {
-//     if (res.ok) {
-//         location.href = "/profile"
-//     } else {
-//         alert("not working")
-//     }
-// })
-
-
-    // ADD: "finished" btn to re route to profile
