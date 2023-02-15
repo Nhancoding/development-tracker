@@ -1,44 +1,52 @@
-    <div class="profile-top">
-        <div class="welcome"></div>
-        <h1>Welcome back, {{user.name}}!</h1>
-        {{!--will display the projects created by the user--}}
-        {{!-- add a button to create new project--}}
+<div class="profile-top">
+    <div class="welcome">
+    <h1>Welcome back, {{user.name}}!</h1>
+    </div>
+    {{!--will display the projects created by the user--}}
+    {{!-- add a button to create new project--}}
+    <div class="profile-add-project">
         <h2>Add a project</h2>
         <a href="/add-project">Add new</a>
     </div>
-<div class="display-projects">
-    <div class="profile-projects">
+</div>
+<div class="my-projects"> 
         <h2>My projects</h2>
-        {{#each projects as |project|}}
-        <section class="project-box">
-            <div>
-                <h3 class="project-name">{{name}}</h3>
-                <h4>Project Description</h4>
-                <p>{{description}}</p>
-                <h4>Project Deadline</h4>
-                <p>{{deadline}}</p>
-                <img id="cloudinary-img" src={{url}} alt="">
-            </div>
-    </div>
+</div>
+<div class="display-projects">
+    <div class="projects-info">
+        <form>
+            {{#each projects as |project|}}
+            <section class="project-box">
+                <div>
+                    <h4>Name</h4>
+                    <h3 class="project-name">{{name}}</h3>
+                    <h4>Project Description</h4>
+                    <p>{{description}}</p>
+                    <h4>Project Deadline</h4>
+                    <p>{{deadline}}</p>
+                </div>
+    </div></section>
+
     <div class="shown-contracts">
         <div class="profile-contracts">
-            <h4>Contracts</h4>
+
             {{#each contracts as |contract|}}
             <section class="contract-box">
+                <h4>Contract Name:</h4>
                 <h3 class="contract-name">{{name}}</h3>
-                <h4>Contract Description</h4>
+                <h4>Description:</h4>
                 <p>{{description}}</p>
-                <h4>Contracts estimated cost</h4>
+                <h4>Estimated Cost:</h4>
                 <p>{{cost}}</p>
 
             </section>
             {{/each}}
         </div>
     </div>
-
-
+    </form>
 </div>
 {{/each}}
 
-</section>
+
+
 <script src="/js/profile.js"></script>
