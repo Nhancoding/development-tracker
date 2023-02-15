@@ -1,45 +1,62 @@
-<h1>Login Here!</h1>
+{{!-- <h1>Login Here!</h1>
 <form id="loginForm" class="authForm">
-    <input type="text" placeholder="email" id="loginEmail">
-    <input type="password"id="loginPassword">
+    <input class="loginInfo" type="text" placeholder="email" id="loginEmail">
+    <input class="loginInfo" type="password" placeholder="password" id="loginPassword">
     <button>Login</button>
 </form>
 <h1>Sign up Here!</h1>
 <form id="signupForm" class="authForm">
-
-    <input type="text" placeholder="name" id="signupName">
-    <input type="text" placeholder="email" id="signupEmail">
-    <input type="password"id="signupPassword">
+    <input class="signupInfo" type="text" placeholder="name" id="signupName">
+    <input class="signupInfo" type="text" placeholder="email" id="signupEmail">
+    <input class="signupInfo" type="password" placeholder="password" id="signupPassword">
     <button>Signup</button>
-</form>
+</form> --}}
+<div>
+    <h2>Login here!</h2>
+    <form id="loginForm" class="authForm" action="/action_page.php">
+        <input class="loginInfo" type="text" name="name" placeholder="Email.." id="loginEmail">
+        <input class="loginInfo" type="text" name="password" placeholder="Password.." id="loginPassword">
+        <button>Login</button>
+    </form>
+</div>
 
-{{!-- <a href="/">Home</a>
-        {{#if isLoggedIn}}
-            <a href="/project">project</a>
-            <button id="logoutBtn">Log me out</button>
-            <script src="js"></script>
-        {{else}}
-            <a href="/login">login</a>
-            <a href="/signup">signup</a>
-        {{/if}}
+<div>
+    <h2>Signup here!</h2>
+    <form id="signupForm" class="authForm" action="/action_page.php">
+        <input class="signupInfo" type="text" name="name" placeholder="Name.." id="signupName">
+        <input class="signupInfo" type="text" name="email" placeholder="Email.." id="signupEmail">
+        <input class="signupInfo" type="text" name="password" placeholder="Password.." id="signupPassword">
+        <button>Signup</button>
+    </form>
+</div>
 
-        {{#if isLoggedOut}}
-            <a href="/project">project</a>
-            <button id="loginBtn">Log me in</button>
-            <script src="/js/"></script>
-        {{else}}
-            <a href="/logout">logout</a>
-            <a href="/signup">signup</a>
-        {{/if}}
+{{!-- <a href="/">Home</a> --}}
+{{#if isLoggedIn}}
+{{!-- <a href="/project">project</a> --}}
+<button id="logoutBtn">Log me out</button>
+<script src="/js/"></script>
+{{else}}
+{{!-- <a href="/login">login</a>
+<a href="/signup">signup</a> --}}
+{{!-- {{/if}} --}}
 
-        {{#if isSignedup}}
-            <a href="/project">project</a>
-            <button id="registerBtn">Register</button>
-            <script src="js"></script>
-        {{else}}
-            <a href="login">login</a>
-            <a href="logout">logout</a>
-        {{/if}} --}}
+{{#if isLoggedOut}}
+{{!-- <a href="/project">project</a> --}}
+<button id="loginBtn">Log me in</button>
+<script src="/js/"></script>
+{{else}}
+{{!-- <a href="/logout">logout</a>
+<a href="/signup">signup</a> --}}
+{{!-- {{/if}} --}}
+
+{{#if isSignedup}}
+{{!-- <a href="/project">project</a> --}}
+<button id="registerBtn">Register</button>
+<script src="js"></script>
+{{else}}
+{{!-- <a href="login">login</a>
+<a href="logout">logout</a> --}}
+{{!-- {{/if}} --}}
 
 <script src="/js/login.js"></script>
-<script src="/js/signup.js"></script>
+<script src="/js/signup.js"></script> 
