@@ -35,7 +35,11 @@ document.querySelector("#project-submit").addEventListener("click", e => {
         image: url
 
     }
-    console.log(projectData)
+    console.log("new project data",projectData)
+    if (projectData) {
+        
+        document.querySelector("#cloudinary-img").setAttribute("src",projectData.image)
+    }
     document.querySelector("#newProjName").append(projectData.name)
     fetch("/api/projects", {
         method: "POST",
