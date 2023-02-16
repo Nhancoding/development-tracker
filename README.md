@@ -21,6 +21,10 @@ First we start by downloading all of the packages we will be using. For our proj
 
 When you enter this application, the first thing you will see on the home page are login and sign up prompt. For new users, you will need to create an account, but returning users can simply login. To create an account enter your name, email, and password. After you created an account, you will automatically be logged in. Currently you are in the profile page, and for new users there will obviously be no projects yet. To add a project, simply click on the "add new" link under add project header. This will route us to a new page where we can enter our new project's information. Fill out the project name, deadline, and description. Users also have the option to upload an image with their new project. After you have filled out the credentials you can click the submit button. This will route us to the create contracts page. As a developer we understand projects will have many contractors, so here is where you can keep track of the contracts your project have with contractors. Here you can name the contract, enter the description, and add the cost. Once you've submitted the contract, you will be able to continue adding contracts until you are satisfied. When all the contracts are submitted, you can click the "Finished" button. This routes you to your profile page with all of your created projects and contract. By now, you have used majority of the application. From this profile page you can continue to create more projects or log off if you are done.
 
+    ```md
+    ![alt text](assets/images/screenshot.png)
+    ```
+<img width="943" alt="Screenshot_20230216_124314" src="https://user-images.githubusercontent.com/119919710/219314408-df9b59c1-325a-4016-8482-a0586d1ad8d9.png">
 
 ## Credits
 
