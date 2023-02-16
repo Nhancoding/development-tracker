@@ -62,6 +62,8 @@ router.post("/",(req,res)=>{
         email:req.body.email,
         password:req.body.password
     }).then(userData=>{
+        req.session.userId = userData.id;
+        req.session.userEmail = userData.email;
         res.json(userData)
     }).catch(err=>{
         console.log(err);

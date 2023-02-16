@@ -53,7 +53,6 @@ router.post("/", async (req, res) => {
       description: req.body.description,
       deadline: req.body.deadline,
       UserId: req.session.userId,
-    //   public_id:r.public_id,
       url:req.body.image
     });
     //   await projectData.addcontract(req.body.contractIds);
