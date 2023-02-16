@@ -1,7 +1,7 @@
 // const {JSON}= require("sequelize");
 
 // const router = require("../../controllers/frontEndController");
-let url = null;
+let url = "";
 var myWidget = cloudinary.createUploadWidget(
   {
     cloudName: "dfejwyntg",
@@ -12,7 +12,7 @@ var myWidget = cloudinary.createUploadWidget(
       console.log(result.info.url);
       url = result.info.url;
     } else {
-      console.log(error);
+      console.log("err");
     }
   }
 );
@@ -31,16 +31,14 @@ document.querySelector("#project-submit").addEventListener("click", (e) => {
   document.querySelector("#contractForm").classList.remove("hide");
 
   const projectData = {
-    name: document.querySelector("#pname").value,
-    deadline: document.querySelector("#pdeadline").value,
-    description: document.querySelector("#pdescription").value,
+    name: document.querySelector("#pname").value.trim(),
+    deadline: document.querySelector("#pdeadline").value.trim(),
+    description: document.querySelector("#pdescription").value.trim(),
     image: url,
   };
   console.log("new project data", projectData);
   if (projectData) {
-    document
-      .querySelector("#cloudinary-img")
-      .setAttribute("src", projectData.image);
+    document.querySelector("#cloudinary-img").setAttribute("src", projectData.image);
   }
   document.querySelector("#newProjName").append(projectData.name);
   fetch("/api/projects", {
