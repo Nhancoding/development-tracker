@@ -1,6 +1,6 @@
 <div class="profile-top">
     <div class="welcome">
-    <h1>Welcome back, {{user.name}}!</h1>
+        <h1>Welcome back, {{user.name}}!</h1>
     </div>
     {{!--will display the projects created by the user--}}
     {{!-- add a button to create new project--}}
@@ -9,23 +9,23 @@
         <a href="/add-project">Add new</a>
     </div>
 </div>
-<div class="my-projects"> 
-        <h2>My projects</h2>
+<div class="my-projects">
+    <h2>My projects</h2>
 </div>
+{{#each projects as |project|}}
 <div class="display-projects">
-    <div class="projects-info">
-        <form>
-            {{#each projects as |project|}}
-            <section class="project-box">
-                <div>
-                    <h4>Name</h4>
-                    <h3 class="project-name">{{name}}</h3>
-                    <h4>Project Description</h4>
-                    <p>{{description}}</p>
-                    <h4>Project Deadline</h4>
-                    <p>{{deadline}}</p>
-                </div>
-    </div></section>
+    <div class="projects-box">
+        <div class="projects-info">
+            <h3 class="project-name">{{name}}</h3>
+            <h4>Project Description:</h4>
+            <p>{{description}}</p>
+            <h4>Project Deadline:</h4>
+            <p>{{deadline}}</p>
+        </div>
+        <div class="cloudinary-img">
+            <img id="cloudinary-img" src={{url}} alt="">
+        </div>
+    </div>
 
     <div class="shown-contracts">
         <div class="profile-contracts">
@@ -38,12 +38,10 @@
                 <p>{{description}}</p>
                 <h4>Estimated Cost:</h4>
                 <p>{{cost}}</p>
-
             </section>
             {{/each}}
         </div>
     </div>
-    </form>
 </div>
 {{/each}}
 
