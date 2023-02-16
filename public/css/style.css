@@ -216,4 +216,21 @@ button {
   /* add project page */
   /* .addProjectImg{
     align-items: center;
-  } */
+  }
+  #title {
+    font-weight: bold;
+    font-size: 200%;
+    background: #414833;
+    color: #fff;
+    text-shadow: 5px 5px 2px black;
+  }
+  #about {
+    background: black;
+    color: #fff;
+    margin: 5px 50% 0 0;
+  }
+  #dev-team {
+    background: black;
+    color: #fff;
+    margin: 10px 50% 0 0;
+  }
