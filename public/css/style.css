@@ -1,102 +1,125 @@
+
+@import url("https://fonts.googleapis.com/css?family=Saira+Semi+Condensed&display=swap");
+* {
+  font-family: "Saira Semi Condensed", sans-serif;
+  transition: all 0.5s ease; 
+  background: #dfdfdf;
+}
+
 .hide {
     display: none;
 }
-.addProjectsTitle {
-    text-align: center;
-}
+
 form {
     position: relative;
     text-align: center;
-    padding: 25px;
+    
 }
 .new-project-page {
     text-align: center;
-    height: 50vh;
+    /* height: 50vh; */
 }
 /* profile page */
-
-/* .profile-aside{
-    height: 100vh;
-    width: 20vw;
-    background-color: olive;
+/* top of profile */
+.profile-top{
+    height: 15vh;
+    width: 100vw;
     padding: 5px;
-    align-items: left;
-    display: flex;
+    border-bottom: 5px solid black;
 
 }
-.display-projects{
-    height: 100vh;
-    width: 60vw;
-   align-content: space-around;
-   display: flex;
-   justify-content: center;
-} */
+.welcome {
+    float: left;
+}
+.profile-add-project {
+    height: 25px;
+    margin-left: 35vw;
+    text-align: center;
+    padding-top: 20px;
+    
+}
+.my-projects{
+    height: 5vh;
+    text-align: center;
+    font-size: larger;
+}
+/* project box */
 
-/* ADD NEW PROJECT */
+.display-projects {
+    background: rgba(255, 255, 255, 0.5);
+    height: 500px;
+    /* border: 2px solid black; */
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    box-shadow: 0 8px 6px -6px #555;
+}
+.projects-box {
+    width: 30%;
+    float: left;
+    margin: 5px;
+    background: rgba(255, 255, 255, 0.5);
 
-/* .authForm {
+}
+.projects-info {
+    height: 50%;
+    border: 3px solid black;
+    border-radius: 5px;
+    overflow: auto;
+    margin: 3px;
+    overflow-y: auto;
+    overflow-wrap: break-word;
+    padding: 3px;
+    max-height: 221.78px;
+}
+#cloudinary-img{
+    display: block;
+    max-width:380px;
+    max-height:240px;
+    width: auto;
+    height: auto;
+    margin: 3px;
+    margin-top: 10px;
+    background: none;
+}
+.cloudinary-img{
+    background: rgba(255, 255, 255, 0.5);
+
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
     align-content: center;
-    margin: auto;
-    text-align: center;
-    width: 220px;
-    border: 10px solid seagreen;
-    margin: 20px;
+    overflow: hidden;
+    height:221.78px;
+    object-fit: cover; */
 }
-.loginInfo {
-    width: 150px;
-    text-align: center;
-    margin: auto;
-    display: block;
-    outline-style: solid; 
-    outline-color: blueviolet;
+.shown-contracts {
+    overflow: auto;
+    height: 350px;
+    width: 60%;
+    float: right; 
+    align-items: center;
+    border: 2px solid black;
+    margin-top: 90px;
+    margin-right: 50px;
+
 }
-.signupInfo {
-    width: 150px;
-    text-align: center;
-    margin: auto;
-    display: block;
-    outline-style: dashed;
-    outline-color: blueviolet;
-} */ 
-
-input[type=text], select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  outline-style: solid;
-  outline-color: rgb(11, 11, 11);
-  border: 5px solid rgb(130, 29, 29);
-  border-radius: 4px;
-  box-sizing: border-box;
+.profile-contracts{
+    height: 300px;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin-top: 30px;
+    margin-left: 10px;
+   
 }
-
-input[type=submit] {
-  width: 100%;
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+.contract-box{
+    border: 2px solid black;
+    width: 200px;
+    margin-right: 10px;
+    padding: 2px;
+    flex: 0 0 auto;
+    overflow-x: auto;
+    overflow-wrap: break-word;
 }
-
-input[type=submit]:hover {
-  background-color: #45a049;
-}
-
-div {
-  border-radius: 5px;
-  background-color: #14a254;
-  padding: 20px;
-}
-
-h2 {
-    text-align: center;
-}
-
-
-
-
-
