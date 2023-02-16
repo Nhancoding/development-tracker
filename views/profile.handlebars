@@ -13,7 +13,7 @@
     <h2>My projects</h2>
 </div>
 {{#each projects as |project|}}
-<div class="display-projects">
+<div class="display-projects hover">
     <div class="projects-box">
         <div class="projects-info">
             <h3 class="project-name">{{name}}</h3>
@@ -22,18 +22,18 @@
             <h4>Project Deadline:</h4>
             <p>{{deadline}}</p>
         </div>
-        <div class="image">
+        
         <div class="cloudinary-img">
             <img id="cloudinary-img" src={{url}} alt="">
         </div>
-        </div>
+        
     </div>
 
     <div class="shown-contracts">
         <div class="profile-contracts">
 
             {{#each contracts as |contract|}}
-            <section class="contract-box">
+            <section class="contract-box sketchy">
                 <h4>Contract Name:</h4>
                 <h3 class="contract-name">{{name}}</h3>
                 <h4>Description:</h4>
