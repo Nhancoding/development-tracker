@@ -17,9 +17,7 @@ var myWidget = cloudinary.createUploadWidget(
   }
 );
 
-document.getElementById("upload_widget").addEventListener(
-  "click",
-  function (e) {
+document.getElementById("upload_widget").addEventListener("click",function (e) {
     e.preventDefault();
     myWidget.open();
   },
