@@ -143,14 +143,14 @@ body{
 
 }
 
-.signupInfo {
+/* .signupInfo {
     width: 150px;
     text-align: center;
     margin: auto;
     display: block;
     outline-style: dashed;
     outline-color: blueviolet;
-} */ 
+} 
 
 input[type=text], select {
   width: 100%;
@@ -162,6 +162,8 @@ input[type=text], select {
   border: 5px solid rgb(130, 29, 29);
   border-radius: 4px;
   box-sizing: border-box;
+} */
+
 .profile-contracts{
     height: 300px;
     display: flex;

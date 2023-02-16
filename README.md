@@ -2,27 +2,20 @@
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
+As a developer myself, I understand the importance of having a streamlined process for managing projects and associated contracts. I wanted to create a tool that would make it easy for developers to create projects and manage contracts associated with those projects, in order to streamline their workflows and make their lives easier.
 
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
+I built this project in order to provide developers with an easy-to-use tool for managing projects and contracts. By creating a restfulAPI, I aimed to make it possible for developers to integrate this tool into their existing workflows and systems, in order to maximize efficiency and reduce the amount of time spent on administrative tasks.
 
-## Table of Contents (Optional)
+This project solves the problem of project and contract management for developers. By providing a simple, intuitive interface for creating and managing projects, and attaching contracts to those projects, developers can reduce the amount of time and effort spent on administrative tasks, and focus more on their core development work.
 
-If your README is long, add a table of contents to make it easy for users to find what they need.
+During the development of this project, I learned a lot about restfulAPI design and development, as well as project and contract management best practices. I also gained experience working with different development tools and technologies, and learned how to build a scalable and extensible system that can be easily customized and integrated into existing workflows.
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
 
 ## Installation
 
 What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
 
-First we start by downloading all of the packages we will be using. For our projct we use npm install express, sequalize, bcrypt, connect-session, dotenv, mysql2. A new technology npm packages that we chose is cloudinary which allows a user to upload images. Since this is an npm package we simply npm i cloudinary.
+First we start by downloading all of the packages we will be using. For our projct we use npm install express, sequalize, bcrypt, connect-session, dotenv, mysql2. To get the mysql environment runing, you want type "mysql -uroot -p" then enter your password. You will need to run this to drop the database everytime you start a new server. A new technology npm packages that we chose is cloudinary which allows a user to upload images. Since this is an npm package we simply npm i cloudinary. Additinal steps with cloudinary requires a user to create an account on their website. Then you must copy over the configuration which includes your unique "cloud name, api key, and api secret. Lastly to tie cloudinary to the front end, you must also copy over your widget snippet to the front end of your code.
 ## Usage
 
 Provide instructions and examples for use. Include screenshots as needed.
